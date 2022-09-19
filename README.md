@@ -15,55 +15,52 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# .environment variables
+$ cp .env.defaults .env
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## What is this?
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+This is a Nuxt app intended to bootstrap your development with Nuxt on Access Protocol.
 
-### `assets`
+## How does this work?
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+It starts with the [solana-wallets-vue](https://github.com/TheBlockCrypto/bootstrap-ap-nuxt/blob/main/plugins/solana-wallets-vue.client.ts) client side plugin. The plugin installs all of our desired [wallet adapters ](https://www.npmjs.com/package/@solana/wallet-adapter-wallets) and [initializes the global wallet state](https://github.com/TheBlockCrypto/bootstrap-ap-nuxt/blob/main/components/wallets-vue/index.ts).
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+The state is implemented in [createWalletStore.ts](https://github.com/TheBlockCrypto/bootstrap-ap-nuxt/blob/main/components/wallets-vue/createWalletStore.ts) which is a port from [solana-wallets-vue](https://github.com/lorisleiva/solana-wallets-vue/blob/main/src/createWalletStore.ts) with some tweaks made to make it compatible with Vue 2 and Nuxt Bridge. 
 
-### `components`
+Once that state is intialized, the [`wallet` store ](https://github.com/TheBlockCrypto/bootstrap-ap-nuxt/blob/main/store/wallet/actions.ts) watches it using `vue-demi` to be forward compatible with the Vue 3 context used in `createWalletStore`. 
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+## Store Directory
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+### Wallet Actions
 
-### `layouts`
+This is the first store module that gets called. 
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+##### init
+On a successful connect, it dispatches all the necessary actions to fetch the wallet's balances and accounts. 
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+On launch, this store sets up a [watch](https://github.com/TheBlockCrypto/theblock.co/blob/start-bagel-stories/store/wallet/actions.ts#L50) on the connected state and publicKey, both of which are handled by `createWalletStore`. 
 
+##### loadAccount 
+Fetches all necessary user data by dispatching actions to other store modules.
 
-### `pages`
+##### forceOpen
+Forces the wallet dropdown's open/closed state.
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+##### guiding
+Sets the state to determine if a user currently has the wallet dropdown open.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+##### startPolling
+Polls the window's publickey. This is used for listening to wallet 'hot swaps'
+* * *
+### Pools Actions
 
-### `plugins`
+A collection of actions that are called from wallet. These vuex actions call [access-protocol services](https://github.com/TheBlockCrypto/bootstrap-ap-nuxt/tree/main/services/access) and set the data, with occasional safety checks.
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+### Program Actions
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+A central state to can call the access program. This gives the app a safe and reliable program to interact with, rather than having a potentially mutable instance that could cause issues.
