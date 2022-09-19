@@ -1,0 +1,738 @@
+@import "./display.scss";
+@import "./typography.scss";
+@import "./color-vars.scss";
+
+// Light Mode palette
+$light-color_canvas-bg: #fefefe;
+$light-color_canvas-fg: #333;
+
+$light-color_positive: #33853e;
+$light-color_negative: #c13030;
+
+
+// Dark Mode palette
+$dark-color_canvas-bg: #111;
+$dark-color_canvas-fg: #eee;
+
+$dark-color_positive: #33853e;
+$dark-color_negative: #c13030;
+
+
+// Brand palette
+$brand-color_primary: #0000ff;
+$brand-color_primary_dark: #668FF9;
+$brand-color_primary_inverted: #fefefe;
+$brand-color_primary_dark_inverted: #fefefe;
+
+$access-color: #232730;
+$access-folor-fg: #fefefe;
+
+
+
+// Light Mode Application
+html{
+	background-color: $light-color_canvas-bg;
+	color: $light-color_canvas-fg;
+
+	header.tb2Header{
+		div.pinModules{
+			border-color: rgba($light-color_canvas-fg, 0.1);
+
+			>div{
+				&:nth-child(odd){
+					border-color: rgba($light-color_canvas-fg, 0.1);
+				}
+				&:nth-child(even){
+					border-color: rgba($light-color_canvas-fg, 0.1);
+				}
+				@media(max-width: $breakpoint-b){
+					&:nth-child(odd){
+						border-color: rgba($light-color_canvas-fg, 0.1);
+					}
+					&:nth-child(even){
+						border-color: rgba($light-color_canvas-fg, 0.1);
+					}
+				}
+			}
+		}
+		div.topCategories{
+			>ul.topList{
+				>li{
+					a{
+						&:hover{
+							color: $brand-color_primary;
+						}
+					}
+				}
+			}
+			div.allCategories{
+				>ul.allList{
+					>li{
+						a{
+							&:hover{
+								color: $brand-color_primary;
+							}
+						}
+					}
+				}
+			}
+			div.moreCategories{
+				&:hover{
+					color: $brand-color_primary;
+				}
+			}
+		}
+	}
+	div.miniBrandbar{
+			border-color: rgba($light-color_canvas-fg, 0.1);
+	}
+  div.breakingNews{
+  	div.headlineMarquee{
+			&:before{
+				background: linear-gradient(90deg, rgba($light-color_canvas-bg,1) 0%, rgba($light-color_canvas-bg,0) 100%);
+			}
+			&:after{
+				background: linear-gradient(90deg, rgba($light-color_canvas-bg,0) 0%, rgba($light-color_canvas-bg,1) 100%);
+			}
+  	}
+    h3.bnHeadline{
+      a{
+        &:hover{
+          color: $brand-color_primary;
+        }
+      }
+    }
+  }
+	div.priceTicker{
+    div.tickerUI{
+			select{
+				background-color: rgba($light-color_canvas-fg,0.1);
+				color: $light-color_canvas-fg;
+				background-image: url('https://www.tbstat.com/wp/uploads/2022/02/down-tick.svg');
+			}
+		}
+		div.tickerPrices{
+			&:before{
+				background: linear-gradient(90deg, rgba($light-color_canvas-bg,1) 0%, rgba($light-color_canvas-bg,0) 100%);
+			}
+			&:after{
+				background: linear-gradient(90deg, rgba($light-color_canvas-bg,0) 0%, rgba($light-color_canvas-bg,1) 100%);
+			}
+			div.priceCol{
+				border-color: rgba($light-color_canvas-fg, 0.1);
+			}
+		}
+		div.tickerSponsor{
+			color: $brand-color_primary;
+		}
+	}
+  div.expandedNav{
+		nav{
+			background-color: $light-color_canvas-bg;
+
+			div.brandLogo>svg .st0{
+				fill: $light-color_canvas-fg;
+			}
+			div.closeButton{
+				>svg{
+					.st2{
+						stroke: $light-color_canvas-fg;
+					}
+				}
+			}
+			>ul{
+				&.toptier{
+					>a>li{
+						border-color: rgba($light-color_canvas-fg, 0.1);
+					}
+				}
+				&.subtier{
+					>a>li{
+						color: rgba($light-color_canvas-fg, 0.5);
+					}
+				}
+				&.lasttier{
+					>li{
+						color: rgba($light-color_canvas-fg, 0.5);
+					}
+				}
+				a, li{
+					&:hover{
+						color: $brand-color_primary !important;
+					}
+				}
+			}
+		}
+		&.open{
+			div.shade{
+				background-color: rgba($light-color_canvas-fg,0.6);
+			}
+		}
+	}
+	div.brandBar,
+	div.fixedHeaderMain,
+	div.fixedHeaderArticle{
+		div.mainMenu{
+			>ul.leftMenu,
+			>ul.rightMenu{
+				>li{
+					a{
+						&:hover{
+							color: $brand-color_primary;
+						}
+					}
+				}
+				.pro{
+					color: $brand-color_primary;
+				}
+			}
+			div.mainLogo>a>svg .st0{
+				fill: $light-color_canvas-fg;
+			}
+		}
+		div.pinModules{
+			border-color: rgba($light-color_canvas-fg, 0.1);
+
+			>div{
+				&:nth-child(odd){
+					border-color: rgba($light-color_canvas-fg, 0.1);
+				}
+				&:nth-child(even){
+					border-color: rgba($light-color_canvas-fg, 0.1);
+				}
+				@media(max-width: $breakpoint-b){
+					&:nth-child(odd){
+						border-color: rgba($light-color_canvas-fg, 0.1);
+					}
+					&:nth-child(even){
+						border-color: rgba($light-color_canvas-fg, 0.1);
+					}
+				}
+			}
+		}
+		div.leftCorner{
+			svg.tb2Symbol{
+				.st0{
+					fill: $light-color_canvas-fg;
+					transition: fill 0.2s ease-in-out;
+				}
+			}
+			div.TBPcta{
+				color: $light-color_canvas-bg;
+				background-color: $light-color_canvas-fg;
+			}
+		}
+		div.rightCorner{
+			svg.menuIcon{
+				.iconSearch, .iconMenu, .iconMoon, .iconSun{
+						stroke: $light-color_canvas-fg;
+				}
+			}
+		}
+	}
+	div.fixedHeaderMain,
+	div.fixedHeaderArticle{
+		background-color: $light-color_canvas-bg;
+		border-color: rgba($light-color_canvas-fg, 0.1);
+	}
+  div.moreCTA {
+    a {
+      &:hover {
+        color: $brand-color_primary;
+      }
+    }
+  }
+	section.fullWidthDisplay,
+	section.combinationAd div.fixedUnit{
+		background-color: rgba($light-color_canvas-fg, 0.05);
+	}
+	div.moduleTitle{
+    a {
+      >svg{
+        .first{
+          fill: $light-color_canvas-fg;
+        }
+        .second{
+          fill: $brand-color_primary;
+        }
+      }
+    }
+		svg{
+			.first{
+				fill: $light-color_canvas-fg;
+			}
+			.second{
+				fill: $brand-color_primary;
+			}
+		}
+	}
+  div.dashboardCTA{
+    >a{
+      &:hover {
+        color: $brand-color_primary;
+      }
+    }
+  }
+	div.collectionHeader div.titleInfo{
+		border-color: rgba($light-color_canvas-fg, 0.1);
+	}
+  div.collectionFeed div.noResults{
+    background-color: rgba($light-color_canvas-fg, 0.1);
+  }
+	article.articleBody div.quickTake, article.articleBody div.aboutAuthor, article.articleBody div.copyright{
+		border-color: rgba($light-color_canvas-fg, 0.1);
+	}
+	article.articleBody{
+		::v-deep div#articleContent a{
+			color: $brand-color_primary;
+		}
+	}
+  article.articleBody .faded-excerpt {
+    &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+  }
+	div.fixedHeaderArticle div.articleInfo div.shareOptions{
+		background: linear-gradient(90deg, rgba($light-color_canvas-bg,0) 0%, rgba($light-color_canvas-bg,1) 9%);
+	}
+	ul.shareButtons{
+		>li{
+			background-color: rgba($light-color_canvas-fg, 0.1);
+		}
+	}
+	div.stickyFooter div.container{
+		background-color: $light-color_canvas-fg;
+		color: $light-color_canvas-bg;
+
+		div.closeButton svg .st2{
+			stroke: $light-color_canvas-bg;
+		}
+	}
+  div.cookieNotice{
+    background-color: $light-color_canvas-fg !important;
+    color: $light-color_canvas-bg;
+    a &:hover {
+      color: $brand-color_primary;
+    }
+    .cookieNotice-button{
+      background-color: $brand-color_primary !important;
+      color: $light-color_canvas-bg;
+    }
+  }
+	footer.tb2Footer div.brandBox div.footerLogo>svg .st0{
+		fill: $light-color_canvas-fg;
+	}
+	article.articleCard div.cardContainer,
+	article.eventCard div.cardContainer,
+	article.chartCard div.cardContainer,
+	article.collectionCard div.cardContainer{
+		border-color: rgba($light-color_canvas-fg, 0.1);
+	}
+	article.articleCard,
+	article.eventCard,
+	article.chartCard,
+  article.collectionCard{
+		div.cardContainer{
+			div.contentContainer{
+				div.meta{
+					div.category{
+						&:hover{
+							color: $brand-color_primary;
+						}
+					}
+				}
+			}
+		}
+    div.cardContainer{
+      div.contentContainer{
+        div.headline h2,
+        div.chartTitle h2,
+        div.eventTitle h2,
+        div.collectionTitle h2,
+        div.cta a{
+          &:hover {
+            color: $brand-color_primary;
+          }
+        }
+      }
+    }
+	}
+
+	footer.tb2Footer{
+		div.linkList{
+			ul{
+				li{
+					a{
+						&:hover{
+							color: $brand-color_primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.accessWrapper {
+  background-color: $access-color;
+  color: $access-folor-fg;
+}
+
+// Dark Mode Application
+html.darkMode{
+	background-color: $dark-color_canvas-bg;
+	color: $dark-color_canvas-fg;
+
+
+	header.tb2Header{
+		div.pinModules{
+			border-color: rgba($dark-color_canvas-fg, 0.1);
+
+			>div{
+				&:nth-child(odd){
+					border-color: rgba($dark-color_canvas-fg, 0.1);
+				}
+				&:nth-child(even){
+					border-color: rgba($dark-color_canvas-fg, 0.1);
+				}
+				@media(max-width: $breakpoint-b){
+					&:nth-child(odd){
+						border-color: rgba($dark-color_canvas-fg, 0.1);
+					}
+					&:nth-child(even){
+						border-color: rgba($dark-color_canvas-fg, 0.1);
+					}
+				}
+			}
+		}
+		div.topCategories{
+			>ul.topList{
+				>li{
+					a{
+						&:hover{
+							color: $brand-color_primary_dark;
+						}
+					}
+				}
+			}
+			div.allCategories{
+				>ul.allList{
+					>li{
+						a{
+							&:hover{
+								color: $brand-color_primary_dark;
+							}
+						}
+					}
+				}
+			}
+			div.moreCategories{
+				&:hover{
+					color: $brand-color_primary_dark;
+				}
+			}
+		}
+	}
+	div.miniBrandbar{
+		border-color: rgba($dark-color_canvas-fg, 0.1);
+	}
+	div.breakingNews{
+		div.headlineMarquee{
+			&:before{
+				background: linear-gradient(90deg, rgba($dark-color_canvas-bg,1) 0%, rgba($dark-color_canvas-bg,0) 100%);
+			}
+			&:after{
+				background: linear-gradient(90deg, rgba($dark-color_canvas-bg,0) 0%, rgba($dark-color_canvas-bg,1) 100%);
+			}
+		}
+    h3.bnHeadline{
+      a{
+        &:hover{
+          color: $brand-color_primary_dark;
+        }
+      }
+    }
+  }
+	div.priceTicker{
+    div.tickerUI{
+			select{
+				background-color: rgba($dark-color_canvas-fg,0.1);
+				color: $dark-color_canvas-fg;
+				background-image: url('https://www.tbstat.com/wp/uploads/2022/02/down-tick-dark.svg');
+			}
+		}
+		div.tickerPrices{
+			&:before{
+				background: linear-gradient(90deg, rgba($dark-color_canvas-bg,1) 0%, rgba($dark-color_canvas-bg,0) 100%);
+			}
+			&:after{
+				background: linear-gradient(90deg, rgba($dark-color_canvas-bg,0) 0%, rgba($dark-color_canvas-bg,1) 100%);
+			}
+			div.priceCol{
+				border-color: rgba($dark-color_canvas-fg, 0.1);
+			}
+		}
+		div.tickerSponsor{
+			color: $brand-color_primary_dark;
+		}
+	}
+  div.expandedNav{
+		nav{
+			background-color: $dark-color_canvas-bg;
+
+			div.brandLogo>svg .st0{
+				fill: $dark-color_canvas-fg;
+			}
+			div.closeButton{
+				>svg{
+					.st2{
+						stroke: $dark-color_canvas-fg;
+					}
+				}
+			}
+			>ul{
+				&.toptier{
+					>a>li{
+						border-color: rgba($dark-color_canvas-fg, 0.1);
+					}
+				}
+				&.subtier{
+					>a>li{
+						color: rgba($dark-color_canvas-fg, 0.5);
+					}
+				}
+				&.lasttier{
+					>li{
+						color: rgba($dark-color_canvas-fg, 0.5);
+					}
+				}
+				a, li{
+					&:hover{
+						color: $brand-color_primary_dark !important;
+					}
+				}
+			}
+		}
+		&.open{
+			div.shade{
+				background-color: rgba($dark-color_canvas-fg,0.2);
+			}
+		}
+	}
+	div.brandBar,
+	div.fixedHeaderMain,
+	div.fixedHeaderArticle{
+		div.mainMenu{
+			>ul.leftMenu,
+			>ul.rightMenu{
+				>li{
+					a{
+						&:hover{
+							color: $brand-color_primary_dark;
+						}
+					}
+				}
+				.pro{
+					color: $brand-color_primary_dark;
+				}
+			}
+			div.mainLogo>a>svg .st0{
+				fill: $dark-color_canvas-fg;
+			}
+		}
+    div.pinModules{
+			border-color: rgba($dark-color_canvas-fg, 0.1);
+
+			>div{
+				&:nth-child(odd){
+					border-color: rgba($dark-color_canvas-fg, 0.1);
+				}
+				&:nth-child(even){
+					border-color: rgba($dark-color_canvas-fg, 0.1);
+				}
+				@media(max-width: $breakpoint-b){
+					&:nth-child(odd){
+						border-color: rgba($dark-color_canvas-fg, 0.1);
+					}
+					&:nth-child(even){
+						border-color: rgba($dark-color_canvas-fg, 0.1);
+					}
+				}
+			}
+		}
+		div.leftCorner{
+			svg.tb2Symbol{
+				.st0{
+					fill: $dark-color_canvas-fg;
+				}
+			}
+			div.TBPcta{
+				color: $dark-color_canvas-bg;
+				background-color: $dark-color_canvas-fg;
+			}
+		}
+		div.rightCorner{
+			svg.menuIcon{
+				.iconSearch, .iconMenu, .iconMoon, .iconSun{
+						stroke: $dark-color_canvas-fg;
+				}
+			}
+		}
+	}
+	div.fixedHeaderMain,
+	div.fixedHeaderArticle{
+		background-color: $dark-color_canvas-bg;
+		border-color: rgba($dark-color_canvas-fg, 0.1);
+	}
+  div.moreCTA {
+    a {
+      &:hover {
+        color: $brand-color_primary_dark;
+      }
+    }
+  }
+	section.fullWidthDisplay,
+	section.combinationAd div.fixedUnit{
+		background-color: rgba($dark-color_canvas-fg, 0.05);
+	}
+	div.moduleTitle{
+		svg{
+			.first{
+				fill: $dark-color_canvas-fg;
+			}
+			.second{
+				fill: $brand-color_primary_dark;
+			}
+		}
+	}
+  div.dashboardCTA{
+    >a{
+      &:hover {
+				color: $brand-color_primary_dark;
+      }
+    }
+  }
+	div.collectionHeader div.titleInfo{
+		border-color: rgba($dark-color_canvas-fg, 0.1);
+	}
+  div.collectionFeed div.noResults{
+    background-color: rgba($dark-color_canvas-fg, 0.1);
+    color: #fefefe;
+  }
+	article.articleBody div.quickTake, article.articleBody div.aboutAuthor, article.articleBody div.copyright{
+		border-color: rgba($dark-color_canvas-fg, 0.1);
+	}
+	article.articleBody{
+		::v-deep div#articleContent a{
+			color: $brand-color_primary_dark;
+		}
+	}
+  article.articleBody.faded-excerpt {
+    &:after {
+      background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 99%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 99%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+	div.fixedHeaderArticle div.articleInfo div.shareOptions{
+		background: linear-gradient(90deg, rgba($dark-color_canvas-bg,0) 0%, rgba($dark-color_canvas-bg,1) 9%);
+	}
+	ul.shareButtons{
+		>li{
+			background-color: rgba($dark-color_canvas-fg, 0.1);
+		}
+	}
+	div.stickyFooter div.container{
+		background-color: $dark-color_canvas-fg;
+		color: $dark-color_canvas-bg;
+
+		div.closeButton svg .st2{
+			stroke: $dark-color_canvas-bg;
+		}
+	}
+  div.cookieNotice{
+    background-color: $dark-color_canvas-fg !important;
+    color: $dark-color_canvas-bg;
+    a &:hover {
+      color: $brand-color_primary_dark;
+    }
+    .cookieNotice-button{
+      background-color: $brand-color_primary_dark !important;
+      color: $dark-color_canvas-fg;
+    }
+  }
+	footer.tb2Footer div.brandBox div.footerLogo>svg .st0{
+		fill: $dark-color_canvas-fg;
+	}
+	article.articleCard div.cardContainer,
+	article.eventCard div.cardContainer,
+	article.chartCard div.cardContainer,
+	article.collectionCard div.cardContainer{
+		border-color: rgba($dark-color_canvas-fg, 0.1);
+	}
+	article.articleCard,
+	article.eventCard,
+	article.chartCard,
+  article.collectionCard{
+		div.cardContainer{
+			div.contentContainer{
+				div.meta{
+					div.category{
+						&:hover{
+							color: $brand-color_primary_dark;
+						}
+					}
+				}
+			}
+		}
+    div.cardContainer{
+      div.contentContainer{
+        div.headline h2,
+        div.chartTitle h2,
+        div.eventTitle h2,
+        div.collectionTitle h2,
+        div.cta a{
+          &:hover {
+            color: $brand-color_primary_dark;
+          }
+        }
+      }
+    }
+	}
+	footer.tb2Footer{
+		div.linkList{
+			ul{
+				li{
+					a{
+						&:hover{
+							color: $brand-color_primary_dark;
+						}
+					}
+				}
+			}
+		}
+	}
+  .connectButton {
+    color: $dark-color_canvas-fg;
+    background-color: $dark-color_canvas-fg;
+    .buttonText {
+      color: $dark-color_canvas-bg;
+    }
+  }
+}

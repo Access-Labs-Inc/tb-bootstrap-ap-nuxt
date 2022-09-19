@@ -1,0 +1,91 @@
+$white:					#ffffff;
+$black:					#000000;
+$blue:					#109CC9;
+$teal:					#3BBCB2;
+$teal-light:			#00E8E6;
+$tarawera:				#073751;
+$orange:				#F79C2E;
+$purple:				#8E3CFF;
+$purple-dark:			#290c3a;
+$purple-light:			#856F90;
+$bahama-blue:			#006c98;
+$sponsored:				#763ed3;
+$grey-medium:			#9B9B9B;
+$grey-light:			#DDDDDD;
+$grey-lighter:			#BEBEBE;
+$grey-lightest:			#f3f3f3;
+$color-facebook:  		#3460a1;
+$color-twitter:   		#1CA0F1;
+$color-linkedin:   		#007bb5;
+$color-instagram:   	#125688;
+$color-reddit:		   	#ff4000;
+$color-snapchat:   		#fffc00;
+$color-tumblr:   		#32506d;
+$color-wishbone:   		#FF5766;
+$dodger-blue: 			#32bcfa;
+$electric-violet: 		#8e3dfe;
+$christine:				#f36d14;
+$mantis:                #7bcc54;
+$red-ribbon:			#EE0A47;
+$outer-space:			#2C2D2D;
+$haiti: 				#0f1732;
+$robins-egg-blue:		#00BDBB;
+
+$color-genesis-primary: #29225C;
+$color-genesis-secondary: #0f1732;
+$color-research-primary: #012525;
+$color-daily-primary: #EF4266;
+$color-daily-secondary: #2674de;
+$color-main-primary: #3BBCB2;
+$color-main-secondary: #32bcfa;
+$color-newsplus-primary: #1d1560;
+
+$color-paper: #fff;
+$color-paper-fg: #222222;
+$color-paper-fg-light: #9B9B9B;
+$color-canvas: #F3F3F3;
+$color-line: #DDDDDD;
+$color-line-heavy: #2c2d2d;
+
+
+$colors: (
+	white: $white,
+	black: $black,
+	blue: $blue,
+	teal: $teal,
+	teal-light: $teal-light,
+	tarawera: $tarawera,
+	orange: $orange,
+	purple: $purple,
+	purple-dark: $purple-dark,
+	purple-light: $purple-light,
+	bahama-blue: $bahama-blue,
+	sponsored-purple: $sponsored,
+	grey-medium: $grey-medium,
+	grey-light: $grey-light,
+	grey-lighter: $grey-lighter,
+	grey-lightest: $grey-lightest,
+	facebook-blue: $color-facebook,
+	twitter-blue: $color-twitter,
+	linkedin-blue: $color-linkedin,
+	instagram-blue: $color-instagram,
+	reddit-orange: $color-reddit,
+	snapchat-yellow: $color-snapchat,
+	tumblr-blue: $color-tumblr,
+	wishbone-pink: $color-wishbone,
+	dodger-blue: $dodger-blue,
+	electric-violet: $electric-violet,
+	christine: $christine,
+    mantis: $mantis,
+    red-ribbon: $red-ribbon,
+    outer-space: $outer-space,
+    haiti: $haiti,
+    robins-egg-blue: $robins-egg-blue,
+	color-genesis-primary: $color-genesis-primary,
+	color-genesis-secondary: $color-genesis-secondary,
+	color-research-primary: $color-research-primary,
+	color-daily-primary: $color-daily-primary,
+	color-daily-secondary: $color-daily-secondary,
+	color-main-primary: $color-main-primary,
+	color-main-secondary: $color-main-secondary
+);

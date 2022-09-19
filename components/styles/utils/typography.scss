@@ -1,0 +1,146 @@
+/* Typography Stuff */
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-extralight.woff') format('woff');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-extralightitalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-light.woff') format('woff');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-lightitalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-regular.woff') format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-medium.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-mediumitalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-semibold.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-semibolditalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-bold.woff') format('woff');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-black.woff') format('woff');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Acumin-Pro';
+  src: url('~/assets/fonts/acumin-pro/acuminpro-blackitalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+@mixin body_font($font-size) {
+  font-family: 'Acumin-Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: $font-size;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+@mixin headline_font($font-size) {
+  font-family: 'Acumin-Pro', Garamond, Georgia, serif;
+  font-size: $font-size;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.25em;
+  font-weight: 400;
+}
+@mixin subheadline_font($font-size) {
+  font-family: 'Acumin-Pro', Garamond, Georgia, serif;
+  font-size: $font-size;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.25em;
+  font-weight: 400;
+}
+@mixin button_font($font-size) {
+  font-family: 'Acumin-Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: $font-size;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+@mixin label_font($font-size) {
+  font-family: 'Acumin-Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: $font-size;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+@mixin meta_font($font-size) {
+  font-family: 'Acumin-Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: $font-size;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 300;
+}
+@mixin menu_font($font-size) {
+  font-family: 'Acumin-Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: $font-size;
+  text-transform: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+@mixin responsive_font_size($maxvp, $minvp, $maxfontsize, $minfontsize){  /* Must use px */
+  font-size: $maxfontsize;
+  @media (max-width: $maxvp){
+
+    // Difference per step
+    $diff: calc(($maxfontsize - $minfontsize) / ($maxvp - $minvp));
+
+    font-size: calc(#{$minfontsize} + #{$diff} * (100vw - #{$minvp}));
+  }
+  @media (max-width: $minvp){
+    font-size: $minfontsize;
+  }
+}
