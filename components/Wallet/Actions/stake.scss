@@ -1,0 +1,30 @@
+@import '@/components/styles/utils/typography.scss';
+
+.stakeSection {
+  display: block;
+  padding: 0px;
+  width: 100%;
+}
+
+.dropdownWarning{
+  @include body_font(12px);
+  width: 100%;
+  line-height: 1.1em;
+  margin: 10px auto 0;
+}
+:deep(.insufficient) {
+  color: #A43F3F;
+}
+:deep(.fees){
+  color: #fff;
+  opacity: 0.5;
+}
+
+:deep(svg) {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  path {
+    fill: rgba(255, 255, 255, 0.5);
+  }
+}

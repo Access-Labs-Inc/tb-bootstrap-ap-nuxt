@@ -1,0 +1,84 @@
+@import '@/components/styles/utils/colors.scss';
+@import '@/components/styles/utils/typography.scss';
+
+.modalView {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  padding: 20px;
+  width: 350px;
+  height: auto;
+  color: #fff;
+  background: $access-color;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5); 
+  box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
+
+  .progressItem{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px 5px 15px 20px;
+  }
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+
+    &.loading {
+      color: rgb(158, 158, 255) !important
+    }
+    &.fulfilled {
+      color: rgb(185, 252, 185) !important
+    }
+  }
+  .spinner.loading:after,
+  .spinner.fulfilled:after,
+  .spinner.error:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 0;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .spinner.loading:after {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgb(158, 158, 255);
+    border-color: rgb(158, 158, 255) transparent rgb(158, 158, 255) transparent;
+    animation: lds-dual-ring .8s linear infinite;
+  }
+  .spinner.fulfilled:after,
+  .spinner.error:after{
+    width: 20px;
+    height: 20px;
+  }
+  .spinner.fulfilled:after{
+    background-image: url('https://www.tbstat.com/wp/uploads/2022/07/icon-check.png');
+  }
+  .spinner.error:after {
+    background-image: url('https://www.tbstat.com/wp/uploads/2022/07/icon-x.png');
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .step {
+    @include body_font(16px);
+    display: inline-block;
+    padding: 2px 0 0 0;
+  }
+}

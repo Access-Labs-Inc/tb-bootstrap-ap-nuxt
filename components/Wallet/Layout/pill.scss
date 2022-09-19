@@ -1,0 +1,23 @@
+@import '@/components/styles/utils/typography.scss';
+
+.togglePill {
+    display: inline-block;
+    padding: 2px 15px 0;
+    position: relative;
+    width: 90px;
+    height: 36px;
+    background: #3D39E1;
+    border-radius: 18px;
+    vertical-align: top;
+    cursor: pointer;
+    &.disabled {
+      cursor: default;
+      opacity: 0.2;
+    }
+}
+.toggleText {
+    @include body_font(14px);
+    line-height: 34px;
+    color: #FFFFFF;
+}
+

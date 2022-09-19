@@ -1,0 +1,41 @@
+@import '@/components/styles/utils/typography.scss';
+
+.dropDownButton {
+    @include body_font(16px);
+    position: relative;
+    padding: 8px 0px 5px;
+    width: 100%;
+    appearance: none;
+    outline: none;
+    border: 0;
+    text-align: center;
+    margin: 0;
+
+    /* TBlight_Canvas-Background */
+    background: #FEFEFE;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.2;
+    }
+    &.disabled {
+      cursor: default;
+      opacity: 0.2;
+    }
+}
+.opaqueButton {
+  opacity: 0.2;
+}
+.unstake {
+  border-color: #FFFFFF;
+  background-color: #232730;
+  color: #FFFFFF;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}

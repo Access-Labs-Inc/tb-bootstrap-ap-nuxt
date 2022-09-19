@@ -1,0 +1,37 @@
+@import '@/components/styles/utils/typography.scss';
+
+.error {
+  position: sticky;
+  background-color: red;
+  margin: auto;
+  padding: 16px;
+  border-radius: 2px;
+  animation-duration: 0.275s;
+  animation-timing-function: ease-in-out;
+  animation-name: showError;
+}
+
+.message {
+  @include subheadline_font(12px);
+  color: white;
+  text-align: center;
+}
+
+.close {
+  @include button_font(10px);
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  right: 2px;
+  color: white;
+}
+
+@keyframes showError {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 25%;
+  }
+}

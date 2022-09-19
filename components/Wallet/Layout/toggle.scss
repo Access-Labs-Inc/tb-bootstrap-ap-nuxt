@@ -1,0 +1,20 @@
+.toggleBar {
+    display: block;
+    position: relative;
+    width: fit-content;
+    height: 36px;
+    padding: 0;
+    margin: 10px auto;
+    background: #111111;
+    border-radius: 18px;
+    text-align: center;
+}
+.toggleNotSelected {
+    background: none !important;
+
+    &.disabled {
+      ::v-deep .toggleText {
+        color: inherit !important;
+      }
+    }
+}

@@ -1,0 +1,15 @@
+div.brandBar {
+  div.leftCorner{
+    .walletConnection {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      margin-left: 8px;
+      z-index: 9999; // we cant catch clicks unless its really high z
+
+      @media(max-width: 475px){
+        margin-left: 5px;
+      }
+    }
+  }
+}

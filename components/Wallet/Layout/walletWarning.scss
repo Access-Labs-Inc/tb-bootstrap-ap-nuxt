@@ -1,0 +1,21 @@
+@import '@/components/styles/utils/typography.scss';
+
+.dropdownWarning {
+    @include body_font(14px);
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+    color: #F5D111;
+}
+
+.minimum {
+  color: #F5D111;
+}
+.insufficient {
+  color: #A43F3F;
+}
+.fees {
+  color: #fff;
+  opacity: 0.5;
+}

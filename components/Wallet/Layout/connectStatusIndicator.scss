@@ -1,0 +1,42 @@
+@import '@/components/styles/utils/typography.scss';
+
+.statusIndicator{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 6px 10px 2px 22px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+.notConnected,
+.noAccess,
+.insufficient,
+.hasAccess {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background: #fefefe80;
+    transform: translateY(-50%);
+}
+.notConnected {
+  background: #fefefe80
+}
+.noAccess {
+    background: #F5D111;
+}
+.hasAccess {
+    background: #33FF00;
+}
+.insufficient {
+  background: red;
+}
+.statusText {
+  @include body_font(11px);
+  position: relative;
+  color: #FFFFFF;
+  margin: 0;
+}

@@ -1,0 +1,54 @@
+@import '@/components/styles/utils/typography.scss';
+
+.staking{
+    height: 40px;
+}
+.inputLabel{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.min,
+.max{
+    @include meta_font(14px);
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    z-index: 999;
+    text-transform: capitalize;
+    cursor: pointer;
+    &.disabled {
+      cursor: default;
+      color: #fefefe33;
+    }
+}
+.stakingInput {
+    @include body_font(20px);
+    position: relative;
+    padding: 0px 20px;
+    width: 100%;
+    height: 40px;
+    margin: 10px auto;
+    color: #fefefe;
+
+    /* TBlight_Canvas-Foreground-Lighter */
+
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &.disabled {
+      color: #fefefe33;
+    }
+}
+.opaque{
+    label.max::after {
+        opacity: .2;
+    }
+}

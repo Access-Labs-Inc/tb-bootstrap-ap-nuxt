@@ -1,0 +1,15 @@
+@import '@/components/styles/utils/typography.scss';
+
+.unstake {
+  display: block;
+  padding: 0px;
+  width: 100%;
+}
+.dropdownWarning{
+  @include body_font(12px);
+  width: 100%;
+  line-height: 1.1em;
+  margin: 10px auto 0;
+  color: #fff;
+  text-align: center;
+}

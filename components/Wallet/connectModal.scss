@@ -1,0 +1,86 @@
+@import '@/components/styles/utils/colors.scss';
+@import '@/components/styles/utils/typography.scss';
+
+h1 { 
+  @include body_font(2.7em);
+}
+h2 { 
+  @include body_font(1.6em);
+}
+
+* {
+  @include body_font(10px);
+}
+
+.modal{
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#000000, 0.9); /* Old browsers */
+  z-index: 9999;
+  overflow-y: scroll;
+  text-align: center;
+  
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px; 
+    height: 30px;
+    width: 30px;
+  }
+
+  .container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    vertical-align: middle;
+    color: $light-color_canvas-fg;
+    background: $light-color_canvas-bg;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: left;
+
+    h1{
+      @include headline_font(30px);
+    }
+    p{
+      @include body_font(16px);
+    }
+  }
+  .connect,
+  .learn{
+    @include body_font(18px);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    padding: 12px 20px 10px;
+    width: 100%;
+  }
+  .connect {
+    background: $light-color_canvas-bg;
+    border: 1px solid rgba($light-color_canvas-fg, 0.1);
+    box-shadow: 1px 2px 2px rgba($light-color_canvas-fg, 0.15);
+  }
+  .divider {
+    background-color: rgba($light-color_canvas-fg, 0.1);
+    height: 1px;
+    width: 100%;
+    margin: 20px auto;
+  }
+  .learn {
+    background: rgba($light-color_canvas-fg, 0.1);
+    max-width: 200px;
+  }
+}
