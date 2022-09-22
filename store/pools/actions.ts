@@ -43,7 +43,7 @@ import {
 
 export default {
   async init ({ commit }): Promise<any> {
-    const { ACCESS_POOL_ID } = this.app.$config
+    const { ACCESS_POOL_ID } = this.app.$config.public
 
     if (!ACCESS_POOL_ID) {
       console.error(`Could not init pool:${ACCESS_POOL_ID}`)
@@ -171,7 +171,7 @@ export default {
   },
 
   async getRewardsBalance ({ commit, state }) {
-    const { SECONDS_IN_DAY } = this.app.$config
+    const { SECONDS_IN_DAY } = this.app.$config.public
     const { stakeAccount, data } = state
 
     if (!stakeAccount.owner || (!(stakeAccount.stakeAmount?.toNumber() > 0 && stakeAccount.lastClaimedTime < data.lastCrankTime))) {

@@ -1,5 +1,6 @@
 import path from 'path'
 import { defineNuxtConfig } from '@nuxt/bridge'
+import runtimeConfigs from './config'
 
 export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -25,6 +26,7 @@ export default defineNuxtConfig({
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/program.client.js',
     '@/plugins/solana-wallets-vue.client.ts'
   ],
 
@@ -47,14 +49,7 @@ export default defineNuxtConfig({
     baseURL: '/',
   },
 
-  publicRuntimeConfig: {
-    ACCESS_PROGRAM_ID: 'acp1VPqNoMs5KC5aEH3MzxnyPZNyKQF1TCPouCoNRuX',
-    ACCESS_POOL_ID: 'B1PciBp1hnhRYtE1rQyHFZBiGfZXTYDg7h6M6pAzY3Hd',
-    ACCESS_UNSTAKE_URL: 'https://st-app.accessprotocol.co',
-    SECONDS_IN_DAY: '86400',
-    SOLANA_NETWORK: 'devnet',
-    SOLANA_RPC_PROVIDER_URL: 'https://api.devnet.solana.com'
-  },
+  ...runtimeConfigs,
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

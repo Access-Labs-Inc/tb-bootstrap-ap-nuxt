@@ -9,7 +9,7 @@ import { getCentralState } from '@/services/access/program'
 
 export default {
     async init ({ commit }): Promise<any> {
-        const { ACCESS_PROGRAM_ID, SOLANA_NETWORK, ACCESS_UNSTAKE_URL } = this.app.$config
+        const { ACCESS_PROGRAM_ID, SOLANA_NETWORK, ACCESS_UNSTAKE_URL } = this.app.$config.public
 
         if (!ACCESS_PROGRAM_ID) {
             console.error(`No Program ID: ${ACCESS_PROGRAM_ID}`)

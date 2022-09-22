@@ -21,6 +21,7 @@
     "@theblockcrypto/ap": "0.2.6",
     "@vueuse/core": "8.9.4",
     "core-js": "^3.19.3",
+    "dotenv-defaults": "^5.0.0",
     "nuxt-edge": "latest",
     "selectn": "^1.1.2",
     "style-loader": "^3.3.1",
