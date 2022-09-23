@@ -18,7 +18,7 @@
     "@solana/wallet-adapter-base": "^0.9.5",
     "@solana/wallet-adapter-wallets": "^0.15.5",
     "@solana/web3.js": "^1.47.3",
-    "@theblockcrypto/ap": "0.2.6",
+    "@theblockcrypto/ap": "TheBlockCrypto/ap#main",
     "@vueuse/core": "8.9.4",
     "core-js": "^3.19.3",
     "dotenv-defaults": "^5.0.0",
