@@ -16,15 +16,8 @@
         :balance="staked"
         @disconnect="$emit('disconnect')"
       />
-      <ActionButton
-        @redirect="$emit('redirect')"
-        text="Read Access Content"
-        redirectTo="access"
-        :disabled="!hasAccess"
-        :redirects="true"
-      />
       <WalletWarning v-if="!hasAccess" type="minimum">
-        You need at least {{ minimumStake + (minimumStake * 0.01) }} ACS to meet the staking requirement to unlock Access content
+        You need at least {{ minimumStake + (minimumStake * 0.02) }} ACS to meet the staking requirement to unlock Access content
       </WalletWarning>
     </div>
     <Toggle

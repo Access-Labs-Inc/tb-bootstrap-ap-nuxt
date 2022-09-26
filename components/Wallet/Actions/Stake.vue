@@ -27,7 +27,7 @@
       The input amount exceeds the amount of tokens in your wallet ({{ unstaked }}).
     </WalletWarning>
     <WalletWarning type="fees">
-      + 1% Protocol Fee ({{ accurateRound(toStake * 0.01)}} ACS)
+      + 2% Protocol Fee ({{ accurateRound(toStake * 0.02)}} ACS)
       <a href="https://www.accessprotocol.co" target="_blank">
         <font-awesome-icon :icon="['fas', 'info-circle']"/>
       </a>
